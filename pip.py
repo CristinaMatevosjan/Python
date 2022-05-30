@@ -2,19 +2,19 @@ from pytube import YouTube
 import tkinter as tk
 from tkinter import  messagebox
 
-def get_entry_1():
+def get_entry():
     value_1=link_entry.get()
-    value_2=ent2.get()
+    value_2=puth_entry.get()
     if value_1 and value_2:
         youtube(value_1,value_2)
-        delete_entry_1()
+        delete_entry()
         clicked()
     else:
         print('Empty entry')
 
-def delete_entry_1():
+def delete_entry():
     link_entry.delete(0,'end')
-    ent2.delete(0,'end')
+    puth_entry.delete(0,'end')
 
 def clicked():
     messagebox.showinfo('Congratulations!', 'Download completed successfully!\nSearch for the file in the specified folder.')
@@ -32,10 +32,10 @@ win.grid_columnconfigure(0,weight=1)
 lbl_2=tk.Label(text='Specify the path where to save the video:').grid(row=2,column=0,sticky='w')
 frm_2=tk.Frame( borderwidth=2)
 frm_2.grid(row=3,column=0, sticky='we')
-ent2=tk.Entry(master=frm_2)
-ent2.grid(row=3,column=0, sticky='we')
+puth_entry=tk.Entry(master=frm_2)
+puth_entry.grid(row=3,column=0, sticky='we')
 
-link_btn=tk.Button(text='Enter', command=get_entry_1).grid(row=4,column=0,sticky='w')
+link_btn=tk.Button(text='Enter', command=get_entry).grid(row=4,column=0,sticky='w')
 
 def youtube(link,puth):
     yt = YouTube(link)
