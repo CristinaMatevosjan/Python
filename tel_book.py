@@ -1,5 +1,4 @@
-from matplotlib.pyplot import text
-from sympy import li
+from cgitb import text
 
 
 def exit(text):
@@ -48,7 +47,6 @@ def search_human():
     b=True
     while b:
         with open(path,'r') as data:
-
             for line in data:
                 if line==search(line):
                     print(line)
